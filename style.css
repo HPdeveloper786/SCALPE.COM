@@ -50,10 +50,6 @@ img { display: block; max-width: 100%; }
 
 /* ─── LANG BAR ─────────────────────────────── */
 .lang-bar {
-  position: fixed;
-  top: 14px;
-  right: 20px;
-  z-index: 1100;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -62,6 +58,15 @@ img { display: block; max-width: 100%; }
   border-radius: 4px;
   padding: 4px 12px;
   backdrop-filter: blur(12px);
+}
+
+/* Inside navbar: shown on desktop, hidden on mobile (hamburger takes over) */
+.lang-bar-nav {
+  position: static;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 10px;
 }
 
 .lang-btn {
@@ -1489,6 +1494,10 @@ blockquote {
   .dropdown { position: static; opacity: 1; pointer-events: all; transform: none; min-width: unset; flex-direction: column; border: none; padding: 0 0 0 20px; }
   .btn-book { display: none; }
   .hamburger { display: flex; }
+  /* Hide lang toggle from inside the menu on mobile — it lives in the navbar header */
+  .nav-lang-mobile { display: none !important; }
+  /* lang-bar-nav stays visible in the navbar on mobile */
+  .lang-bar-nav { display: flex; }
   .hero { min-height: 100svh; padding: 60px 20px 80px; }
   .hero-stats { gap: 0; }
   .stat { padding: 0 16px; }
@@ -1502,7 +1511,44 @@ blockquote {
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom .container { flex-direction: column; text-align: center; }
   .testi-card { flex: 0 0 100%; }
-  .lang-bar { top: 8px; right: 10px; }
+}
+
+/* ─── MOBILE NAV LANG TOGGLE ───────────────── */
+.nav-lang-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-lang-mobile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+  }
+  .nav-lang-mobile .lang-btn {
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 4px 8px;
+  }
+}
+
+/* ─── FOOTER LANG TOGGLE ───────────────────── */
+.footer-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201,168,76,0.06);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px 14px;
+}
+
+.footer-lang .lang-btn {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  padding: 2px 4px;
 }
 
 /* ─── GOLD DIVIDER ─────────────────────────── */

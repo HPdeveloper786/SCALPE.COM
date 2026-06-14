@@ -45,6 +45,10 @@ function setLang(lang) {
   // Update <html lang="...">
   document.documentElement.lang = lang;
 
+  // Close mobile nav if open
+  var navLinks = document.getElementById('navLinks');
+  if (navLinks) navLinks.classList.remove('open');
+
   // Pulse animation on active button
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     if (btn.dataset.lang === lang) {

@@ -11,13 +11,6 @@
 </head>
 <body>
 
-  <!-- LANGUAGE TOGGLE -->
-  <div class="lang-bar">
-    <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-    <span class="lang-divider">|</span>
-    <button class="lang-btn" data-lang="th" onclick="setLang('th')">ไทย</button>
-  </div>
-
   <!-- TOP BAR -->
   <div class="topbar">
     <span data-en="Bangkok · London · Dubai" data-th="กรุงเทพฯ · ลอนดอน · ดูไบ">Bangkok · London · Dubai</span>
@@ -84,9 +77,21 @@
       <li><a href="#results" data-en="Results" data-th="ผลลัพธ์">Results</a></li>
       <li><a href="#testimonials" data-en="Testimonials" data-th="รีวิว">Testimonials</a></li>
       <li><a href="#contact" data-en="Contact" data-th="ติดต่อ">Contact</a></li>
+      <li class="nav-lang-mobile">
+        <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn" data-lang="th" onclick="setLang('th')">ไทย</button>
+      </li>
     </ul>
 
     <a href="#contact" class="btn-book" data-en="Book Consultation" data-th="นัดปรึกษา">Book Consultation</a>
+
+    <!-- Lang toggle: visible on desktop inside navbar, and on mobile in header -->
+    <div class="lang-bar lang-bar-nav">
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="th" onclick="setLang('th')">ไทย</button>
+    </div>
 
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -696,6 +701,11 @@
     <div class="footer-bottom">
       <div class="container">
         <p data-en="© 2026 Scalpé Hair & Scalp Institute. All rights reserved." data-th="© 2026 สถาบัน Scalpé Hair & Scalp สงวนลิขสิทธิ์">© 2026 Scalpé Hair & Scalp Institute. All rights reserved.</p>
+        <div class="footer-lang">
+          <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="th" onclick="setLang('th')">ไทย</button>
+        </div>
         <div class="footer-links">
           <a href="#" data-en="Privacy Policy" data-th="นโยบายความเป็นส่วนตัว">Privacy Policy</a>
           <a href="#" data-en="Terms" data-th="เงื่อนไข">Terms</a>
